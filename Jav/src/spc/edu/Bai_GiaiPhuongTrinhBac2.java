@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * @author SPC
  */
-public class Bai8_GiaiPhuongTrinhBac2 {
+public class Bai_GiaiPhuongTrinhBac2 {
     public static void main(String[] args) {
         System.out.println("CHUONG TRINH GIAI PHUONG TRINH BAC 2");
         double a, b, c;
