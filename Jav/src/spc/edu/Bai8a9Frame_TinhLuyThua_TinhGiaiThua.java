@@ -8,12 +8,12 @@ package spc.edu;
  *
  * @author SPC
  */
-public class Bai8Frame_TinhLuyThua extends javax.swing.JFrame {
+public class Bai8a9Frame_TinhLuyThua_TinhGiaiThua extends javax.swing.JFrame {
 
     /**
      * Creates new form Bai8Frame_TinhLuyThua
      */
-    public Bai8Frame_TinhLuyThua() {
+    public Bai8a9Frame_TinhLuyThua_TinhGiaiThua() {
         initComponents();
     }
 
@@ -34,6 +34,12 @@ public class Bai8Frame_TinhLuyThua extends javax.swing.JFrame {
         txtSO = new javax.swing.JTextField();
         txtKQ = new javax.swing.JTextField();
         btnT = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtSO2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtKQ2 = new javax.swing.JTextField();
+        btnT2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +55,19 @@ public class Bai8Frame_TinhLuyThua extends javax.swing.JFrame {
         btnT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("CHƯƠNG TRÌNH TÍNH GIAI THỪA");
+
+        jLabel6.setText("Nhập số:");
+
+        jLabel7.setText("Kết quả:");
+
+        btnT2.setText("Tính");
+        btnT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnT2ActionPerformed(evt);
             }
         });
 
@@ -71,9 +90,19 @@ public class Bai8Frame_TinhLuyThua extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtMU))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtKQ2)
+                            .addComponent(txtSO2)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 106, Short.MAX_VALUE)
+                        .addGap(0, 105, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnT2)
+                            .addComponent(jLabel5)
                             .addComponent(btnT)
                             .addComponent(jLabel1))))
                 .addGap(112, 112, 112))
@@ -97,21 +126,50 @@ public class Bai8Frame_TinhLuyThua extends javax.swing.JFrame {
                     .addComponent(txtKQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnT)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSO2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtKQ2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnT2)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTActionPerformed
-        int so, mu, luythua = 1;
+        try {
+            int so, mu, luythua = 1;
         so = Integer.parseInt(txtSO.getText());
         mu = Integer.parseInt(txtMU.getText());
         for (int i = 0; i < mu; i++) {
             luythua *= so;
         }
         txtKQ.setText(String.valueOf(luythua));
+        } catch (Exception e) {
+            txtKQ.setText("You stupid");
+        }
     }//GEN-LAST:event_btnTActionPerformed
+
+    private void btnT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnT2ActionPerformed
+        try {
+            int so, kq = 1;
+        so = Integer.parseInt(txtSO2.getText());
+        for (int i = 1; i <= so; i++){
+            kq *= i;
+        }
+        txtKQ2.setText(String.valueOf(kq));
+        } catch (Exception e) {
+            txtKQ2.setText("You stupid");
+        }
+    }//GEN-LAST:event_btnT2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,32 +188,39 @@ public class Bai8Frame_TinhLuyThua extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Bai8Frame_TinhLuyThua.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bai8a9Frame_TinhLuyThua_TinhGiaiThua.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Bai8Frame_TinhLuyThua.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bai8a9Frame_TinhLuyThua_TinhGiaiThua.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Bai8Frame_TinhLuyThua.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bai8a9Frame_TinhLuyThua_TinhGiaiThua.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Bai8Frame_TinhLuyThua.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bai8a9Frame_TinhLuyThua_TinhGiaiThua.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Bai8Frame_TinhLuyThua().setVisible(true);
+                new Bai8a9Frame_TinhLuyThua_TinhGiaiThua().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnT;
+    private javax.swing.JButton btnT2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtKQ;
+    private javax.swing.JTextField txtKQ2;
     private javax.swing.JTextField txtMU;
     private javax.swing.JTextField txtSO;
+    private javax.swing.JTextField txtSO2;
     // End of variables declaration//GEN-END:variables
 }
